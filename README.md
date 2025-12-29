@@ -102,19 +102,19 @@ This is intentional.
 	•	Claude Desktop (macOS)
 
 2. Install dependencies
-
+```
 python -m venv venv
 source venv/bin/activate
 pip install -e .
-
+```
 3. Configure Claude Desktop
 
 Create or edit:
-
+```
 ~/Library/Application Support/Claude/claude_desktop_config.json
-
+```
 Example configuration:
-
+```
 {
   "mcpServers": {
     "code-knowledge-transfer-mcp": {
@@ -124,6 +124,7 @@ Example configuration:
     }
   }
 }
+```
 
 Restart Claude Desktop after saving.
 
