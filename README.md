@@ -1,4 +1,4 @@
-code-knowledge-transfer-mcp
+# Code Knowledge Transfer MCP
 
 A Model Context Protocol (MCP) server designed to transfer engineering knowledge — not just code explanations — from real-world codebases.
 
@@ -6,7 +6,7 @@ This project focuses on evidence-backed understanding: why code exists, how it e
 
 ⸻
 
-Why This Exists
+## Why This Exists
 
 Most AI tools explain what code does.
 
@@ -25,7 +25,7 @@ No speculation. No hallucination. Explicit uncertainty when evidence is weak.
 
 ⸻
 
-What This Project Is (and Is Not)
+## What This Project Is (and Is Not)
 
 ✅ It is
 	•	A read-only MCP server
@@ -41,26 +41,25 @@ What This Project Is (and Is Not)
 
 ⸻
 
-High-Level Architecture
+## High-Level Architecture
 
-User Prompt
-   ↓
-MCP Client (Claude / VS Code extension)
-   ↓ decides when tools are needed
-code-knowledge-transfer-mcp (this repo)
-   ├── get_file
-   ├── get_commits
-   └── find_issues
-        ↓
+User Prompt ->
+ --> MCP Client (Claude / VS Code extension)
+        --> decides when tools are needed
+            --> code-knowledge-transfer-mcp (this repo)
+                ├── get_file
+                ├── get_commits
+                └── find_issues
+            ↓
   Verifiable evidence from GitHub
 
-Key design principle:
+## Key design principle:
 
 The MCP server provides facts only. Reasoning happens in the client.
 
 ⸻
 
-Initial Scope
+## Initial Scope
 	•	Repository: psf/requests
 	•	Focus: Session and request lifecycle
 	•	Goal: Enable safe onboarding and change decisions
@@ -69,7 +68,7 @@ The design is intentionally repo-agnostic and can be extended to other projects.
 
 ⸻
 
-Example Questions This System Handles Well
+### Example Questions This System Handles Well
 	•	“Explain how Requests Sessions work internally”
 	•	“Why does the Session abstraction exist in requests?”
 	•	“What is safe vs risky to change in Requests Sessions?”
@@ -79,14 +78,14 @@ These questions reflect real onboarding and handover scenarios.
 
 ⸻
 
-Output Philosophy
+## Output Philosophy
 
 The system optimizes for:
 	•	Traceability to real evidence
 	•	Conservative risk assessment
 	•	Explicit uncertainty
 
-Typical answers:
+## Typical answers:
 	•	Reference real files, commits, or issues
 	•	Flag high-risk areas more often than safe ones
 	•	Avoid confident claims without evidence
@@ -95,7 +94,7 @@ This is intentional.
 
 ⸻
 
-Running with Claude Desktop
+## Running with Claude Desktop
 
 1. Prerequisites
 	•	Python 3.10+
